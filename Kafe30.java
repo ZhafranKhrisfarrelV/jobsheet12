@@ -3,7 +3,20 @@ package jobsheet12;
 public class Kafe30 {
 
     //Prosedur
-    public static void Menu() {
+    public static void Menu(String namaPelanggan, boolean isMember, int jamKunjung) {
+        System.out.println("Selamat Datang, " + namaPelanggan + "!");
+
+        if (isMember) {
+            System.out.println("Anda adalah member, dapatkan diskon 10% untuk setiap pembelian!");
+        } else {
+            System.out.println("Anda bukan anggota member");
+        }
+
+        if (jamKunjung > 13 && jamKunjung < 17) {
+            System.out.println("Happy Hour! Diskon 20% untuk semua minuman.");
+        } else {
+            System.out.println("Tidak mendapatkan diskon");
+        }
 
         System.out.println("===== MENU RESTO KAFE =====");
         System.out.println("1. Kopi Hitam - Rp 15,000");
@@ -17,6 +30,6 @@ public class Kafe30 {
     }
 
     public static void main(String[] args) {
-        Menu();
+        Menu("Budi", false, 11);
     }
 }
